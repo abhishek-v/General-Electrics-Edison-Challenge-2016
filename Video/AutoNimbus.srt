@@ -1,0 +1,216 @@
+1
+00:00:00,00 --> 00:00:01,100
+When I learnt driving,
+
+2
+00:00:01,100 --> 00:00:02,500
+my dad helped me change gears
+
+3
+00:00:02,500 --> 00:00:04,100
+and helped me become a better driver.
+
+4
+00:00:04,500 --> 00:00:06,100
+But the learning curve stopped there.
+
+5
+00:00:06,600 --> 00:00:08,500
+Although, this seems to be a trivial problem,
+
+6
+00:00:08,500 --> 00:00:12,100
+it avalanches into a problem of environmental and national concern,
+
+7
+00:00:12,200 --> 00:00:14,500
+where thousands of litres of fuel are wasted
+
+8
+00:00:14,700 --> 00:00:16,400
+worth lakhs of rupees.
+
+9
+00:00:16,700 --> 00:00:19,000
+There's always advancement in technology with time
+
+10
+00:00:19,400 --> 00:00:20,400
+but what we see on the road,
+
+11
+00:00:20,400 --> 00:00:21,600
+is a technology of the past.
+
+12
+00:00:21,700 --> 00:00:23,800
+So, we wanted to make changes to the 
+
+13
+00:00:23,800 --> 00:00:25,300
+very fundamental element of the driving hierarchy.
+
+14
+00:00:26,000 --> 00:00:27,400
+So what if there was someone
+
+15
+00:00:27,400 --> 00:00:30,000
+to fill the shoes of a driving expert,
+
+16
+00:00:30,000 --> 00:00:31,400
+sitting next to you, guiding you,
+
+17
+00:00:31,500 --> 00:00:33,500
+monitoring your car's health all the time,
+
+18
+00:00:33,500 --> 00:00:35,900
+saving you from having a huge dent in your pocket.
+
+18
+00:00:35,900 --> 00:00:38,300
+But, this seems to converge to a simple solution
+
+19
+00:00:38,300 --> 00:00:39,900
+of having a driving assistant,
+
+20
+00:00:39,900 --> 00:00:42,100
+which is no different from a rulebook.
+
+21
+00:00:42,100 --> 00:00:45,100
+But what we are dealing with is a real-time problem
+
+22
+00:00:45,100 --> 00:00:46,700
+which requires real-time data analysed
+
+23
+00:00:46,700 --> 00:00:50,400
+taking all possible factors into consideration
+
+24
+00:00:50,500 --> 00:00:52,500
+which a normal rulebook cannot do.
+
+25
+00:00:52,570 --> 00:00:55,500
+This is where we came up with the idea of AutoNimbus
+
+26
+00:00:55,500 --> 00:00:59,500
+where data collected from a car using On-Board Diagnostics
+
+27
+00:00:59,500 --> 00:01:00,500
+is directly sent to the cloud,
+
+28
+00:01:00,500 --> 00:01:03,500
+processed using optimized machine learning algorithms
+
+29
+00:01:03,500 --> 00:01:06,000
+is fed back to the user as useful information.
+
+30
+00:01:06,500 --> 00:01:09,000
+Speed-breaker detection, Road condition detection
+
+31
+00:01:09,000 --> 00:01:11,900
+Fault detection system, advanced Fleet Mangagement System (FMS)
+
+31
+00:01:12,000 --> 00:01:14,500
+Gear recommendation and best-route calculation
+
+32
+00:01:14,500 --> 00:01:16,500
+are minute, but significant things that can
+
+33
+00:01:16,500 --> 00:01:18,500
+completely rewire the way we drive
+
+34
+00:01:18,500 --> 00:01:21,500
+and go one level up in increasing fuel efficiency
+
+
+35
+00:01:21,500 --> 00:01:24,500
+and drastically bring down fuel and maintenance costs.
+
+36
+00:01:24,600 --> 00:01:27,300
+Adding to that, on a larger scale,
+
+37
+00:01:27,300 --> 00:01:29,700
+it even brings down traffic congestion to a larger extent
+
+38
+00:01:29,700 --> 00:01:32,900
+resulting in more organized and safer roads
+
+39
+00:01:32,900 --> 00:01:35,000
+saving more time and fuel.
+
+40
+00:01:35,100 --> 00:01:37,500
+All these recommendations are fed to the user
+
+41
+00:01:37,500 --> 00:01:39,000
+using a smart-phone application
+
+42
+00:01:39,000 --> 00:01:40,000
+thus, completing the whole cycle.
+
+43
+00:01:40,700 --> 00:01:42,300
+Rolling out this idea on a large scale,
+
+44
+00:01:42,300 --> 00:01:45,000
+stresses on the need for a more reliable,
+
+45
+00:01:45,000 --> 00:01:47,150
+secure and robust OBD Scanner
+
+46
+00:01:47,150 --> 00:01:49,200
+which can connect directly to the cloud
+
+47
+00:01:49,200 --> 00:01:52,000
+in addition to having a more reliable and
+
+48
+00:01:52,000 --> 00:01:53,500
+stable system on the cloud.
+
+49
+00:01:53,700 --> 00:01:56,500
+We are planning to make such proprietary OBDs
+
+50
+00:01:56,500 --> 00:01:58,300
+and have tie-ups with all auto-majors
+
+51
+00:01:58,300 --> 00:02:00,500
+to reach out with the masses and to
+
+52
+00:02:00,500 --> 00:02:03,300
+bring about a complete change on Indian roads.

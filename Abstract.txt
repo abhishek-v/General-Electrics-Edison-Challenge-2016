@@ -1,0 +1,26 @@
+Elaboration of the particular project in real life:
+Start your car, connect your phone and you're ready to go! Get route and driving suggestions based on real time traffic and your driving habits. 
+If you're tired of waiting for the only bus via your place, opt in for car pooling, look for fellow car-poolers, and get a comfortable journey.
+Not happy with your vehicle's performance? Take a deeper look into engine stats and fine tune your engine to deliver optimal performance and better fuel efficiency. 
+
+
+Approximate cost of the project:
+1.Google cloud SQL database(Second generation): Rs.2847/month(approx.)
+2.Bluetooth OBD II Scanner : Rs.750/-
+3.The app will be made available to the users free of cost (for the trial version).
+ 
+Scope in the market:
+Pollution and climate change is the talk of the town. Reducing vehicular emissions is a key aspect in this regard, the new rules tested by government of our national capital emphasises the same. In addition to the fact that reduction in fuel usages keeps the environment clean, it reduces the fuel expenses and attracts wide range of users - both individuals and organizations.
+
+
+
+Target audience/Beneficiaries:
+1. Transportation industry:
+Government transport corporations and private transport services will be benefited greatly with savings from fuel expenses. 
+
+2.The general public:
+
+Commuters of public transport can get real time information about its availability and effectiveness, by suggesting various other means such as car pooling.
+Car pooling attracts more people who don't prefer public transport and helps to effectively utilize time, money and fuel. 
+
+Individual vehicle owners can adjust to real time traffic and be aware of best practices when driving through different routes and road conditions. This not only works with cars or trucks, it even applies for bikes.

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Best Route selection</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+        float: left;
+        width: 70%;
+        height: 100%;
+      }
+	  #sig{
+    height: 50px;
+    line-height: 50px;
+}
+
+span {
+    position: relative;
+    font-size: 2.5em;
+    display: inline-block;
+    line-height: .7em;
+    vertical-align: middle;
+}
+
+span:before {
+    font-size: 12px;
+    display: block;
+    position absolute;
+    left: 0;
+    top: 0;
+    content: "N";
+    width: 22px;
+    text-align: center;
+}
+
+span:after {
+    font-size: 12px;
+    display: block;
+    position absolute;
+    left: 0;
+    bottom: 0;
+    content: "n=1";
+    width: 27px;
+    text-align: center;
+}
+#right-panel {
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+#right-panel select, #right-panel input {
+  font-size: 15px;
+}
+
+#right-panel select {
+  width: 100%;
+}
+
+#right-panel i {
+  font-size: 12px;
+}
+
+      #right-panel {
+        margin: 20px;
+        border-width: 2px;
+        width: 20%;
+        float: left;
+        text-align: left;
+        padding-top: 20px;
+      }
+      #directions-panel {
+        margin-top: 20px;
+        background-color: #FFEE77;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+  <h2>Made for the GE Edison Challenge- by Digicons (SASTRA University) </h2>
+  <h3>Selection of best route using Google Maps API and Road Score Algorithm:</h3>
+  <p>Even though the Google Maps API gives us directions between source and destination, most of the time it gives a route without judging the traffic and road conditions. We have formulated an algorithm which gives you the best route depending on the present traffic and road condition. Take a look at the simulation given below. Consider that the user wants to travel from Whitefield to the Bangalore International airport . Basically Google gives us three best routes to choose from. In order to find the best route among these three, we find out the road conditions of each leg(segment) of the route(based on data collected from other users who have travelled in the past hour)and assign each leg an integer 'n'. The lesser the value of n, the better the road condition. For each route, we do the following calculations: 
+  </p>
+  <ol>
+        <li>Multiply score of each segment with the length of the same segment. </li>
+		<li>Sum up the values obtained from each segment.</li>
+		<li>Divide the sum value with the total length of the route. This is done in order to normalize the score.</li>
+		<li>This final value obtained is the score of the route </li>
+	</ol>
+	<p> Mathematically, the score of a route can be represented as:</p>
+	<p id="sig">Score of the route = (<span>&Sigma;</span>Length of road segment n*Score of the road segment n)/Total length of the route</p>
+	<br/>
+	<br/>
+	<p>Calculation of score for each of these 3 routes is done as follows:</p>
+	<p>Since each route has only two segments, the formula will be: [(Length of segment 1*Score of segment 1)+(Length of segment 2*Score of segment 2)]/Total length of the route </p>
+	<p> <b>Route 1: </b><ul><li>((19.7*2) + (42.9*2))/62.6 = 2.0</li></ul> </p>
+	<p> <b>Route 2: </b><ul><li>=((38.1*3) + (13.5*3))/62.6 = 2.472</li></ul> </p>
+	<p> <b>Route 3: </b><ul><li>((8.9*3) + (46.3*2))/55.2 = 2.16</li></ul> </p>
+	</ul>
+	<p>NOTE: Score assigned to each leg is only an example</p>
+	<p> The score of each segment(n) has been assigned some value based on data from users who have travelled in that route for the past hour. The lower the score, better the road condition of that segment. From the above calculations, it is clear that Route 1 is considered to be the best one among the three as it has the least score.</p>
+    <div id="map"></div>
+    <div id="right-panel">
+    <div>
+    <b>Start:(Fixed)</b>
+    <select id="start">
+      <option value="Whitefield, Bengaluru, Karnataka 560066">Whitefield,Bangalore</option>
+    </select>
+    <br>
+	
+	
+    <b>Select a route:</b> <br>
+    <select id="waypoints">
+      <option value="
+NH7, Bengaluru">National Highway 70(NH7) (Route 1)</option>
+      <option value="
+	  Devanahalli,Bengaluru">State Highway 104 (Route 2)</option>
+		<option value="
+HAL Airport Rd">NH7 and HAL Airport Rd (Route 3)</option>
+		
+    </select>
+	
+    <br><b>Destination:(Fixed)</b>
+	<select id="end">
+      <option value="
+Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300">
+Bangalore International Airport</option>
+    </select>
+    <br>
+      <input type="submit" id="submit">
+    </div>
+    <div id="directions-panel"></div>
+    </div>
+    <script>
+function initMap() {
+  var directionsService = new google.maps.DirectionsService;
+  var directionsDisplay = new google.maps.DirectionsRenderer;
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 14,
+    center: {lat: 13.0094, lng: 77.5508}
+  });
+  directionsDisplay.setMap(map);
+
+  document.getElementById('submit').addEventListener('click', function() {
+    calculateAndDisplayRoute(directionsService, directionsDisplay);
+  });
+}
+
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+  var waypts = [];
+  var checkboxArray = document.getElementById('waypoints');
+  for (var i = 0; i < checkboxArray.length; i++) {
+    if (checkboxArray.options[i].selected) {
+      waypts.push({
+        location: checkboxArray[i].value,
+        stopover: true
+      });
+    }
+  }
+
+  directionsService.route({
+    origin: document.getElementById('start').value,
+    destination: document.getElementById('end').value,
+    waypoints: waypts,
+    optimizeWaypoints: true,
+    travelMode: google.maps.TravelMode.DRIVING
+  }, function(response, status) {
+    if (status === google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+      var route = response.routes[0];
+      var summaryPanel = document.getElementById('directions-panel');
+      summaryPanel.innerHTML = '';
+      // For each route, display summary information.
+      for (var i = 0; i < route.legs.length; i++) {
+        var routeSegment = i + 1;
+        summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
+            '</b><br>';
+        summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
+        summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
+        summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
+      }
+    } else {
+      window.alert('Directions request failed due to ' + status);
+    }
+  });
+}
+
+    </script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJz2PCzC90bVzIXBTd1a6sWWiSOA1y2nU&callback=initMap"
+    async defer></script>
+	
+	
+  </body>
+</html>
